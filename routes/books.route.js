@@ -1,6 +1,7 @@
 import express from "express";
 import books from "../data/books.json";
 import fs from 'fs';
+import { createBookSchema, updateBookSchema } from '../models/books.model.js';
 
 const router = express.Router();
 
@@ -33,14 +34,14 @@ router.get("/:id", (req, resp) => {
 //     console.log("Testing 2")
 // });
 
-router.post("/", (req, resp) => {
+router.post("/", createBookSchema, (req, resp) => {
     books.push(req.body);
     fs.writeFileSync("./data/books.json", JSON.stringify(books));
     resp.status(200).send("OK");
 });
 
-router.put("/", (req, resp) => {
-    console.log("Testing")
+router.put("/", updateBookSchema, (req, resp) => {
+    console.log(req.body);
     resp.end();
 });
 
