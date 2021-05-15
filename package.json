@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./app.js",
+    "start": "nodemon ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luidi Matheus",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
