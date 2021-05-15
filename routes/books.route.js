@@ -3,6 +3,14 @@ import books from "../data/books.json";
 
 const router = express.Router();
 
+router.param("id", (req, res, next, id) => {
+    if(isNaN(id)) {
+        next("ID is not a number");
+    } else {
+        next();
+    }
+});
+
 router.get("/", (req, resp) => {
     resp.json(books);
 });
