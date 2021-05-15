@@ -33,7 +33,7 @@ router.get("/:id", (req, resp) => {
 // });
 
 router.post("/", (req, resp) => {
-    console.log("Testing")
+    console.log(req.body)
     resp.end();
 });
 
