@@ -1,5 +1,6 @@
 import express from "express";
 import books from "../data/books.json";
+import fs from 'fs';
 
 const router = express.Router();
 
@@ -33,8 +34,9 @@ router.get("/:id", (req, resp) => {
 // });
 
 router.post("/", (req, resp) => {
-    console.log(req.body)
-    resp.end();
+    books.push(req.body);
+    fs.writeFileSync("./data/books.json", JSON.stringify(books));
+    resp.status(200).send("OK");
 });
 
 router.put("/", (req, resp) => {
