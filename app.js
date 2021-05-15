@@ -25,6 +25,13 @@ server.get(BOOKS_URL+"/:id", (req, resp) => {
     }
 });
 
+server.get("/test", (req, resp, next) => {
+    resp.send("Testing")
+    next();
+}, (req, resp) => {
+    console.log("Testing 2")
+});
+
 server.post(BOOKS_URL, (req, resp) => {
     console.log("Testing")
     resp.end();
