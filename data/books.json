@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Harry Potter",
+        "type": "Fiction"
+    },
+    {
+        "id": 2,
+        "title": "Harry Potter 2",
+        "type": "Fiction"
+    },
+    {
+        "id": 3,
+        "title": "Harry Potter 3",
+        "type": "Fiction"
+    }
+]
