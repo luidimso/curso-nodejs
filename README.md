@@ -9,3 +9,7 @@ Install nodemon for development environment
 Install express
 
 ```npm i -S express@4.17.1```
+
+Install morgan
+
+```npm i morgan@1.10.0```

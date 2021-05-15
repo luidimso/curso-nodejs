@@ -1,12 +1,14 @@
 import express from "express";
-import books from './data/books.json';
 import booksRoutes from './routes/books.route.js';
+import morgan from 'morgan';
 
 const server = express();
 const PORT = 3000;
 
 const createUrl = (version, path) => "/api/"+version+"/"+path;
 const BOOKS_URL = createUrl("v1", "books");
+
+server.use(morgan("tiny"));
 
 server.use(BOOKS_URL, booksRoutes);
 
