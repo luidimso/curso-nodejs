@@ -15,14 +15,27 @@ server.get(BOOKS_URL, (req, resp) => {
     resp.json(books);
 });
 
+server.get(BOOKS_URL+"/:id", (req, resp) => {
+    const book = books.find(value => value.id == req.params.id);
+
+    if(book) {
+        resp.json(book);
+    } else {
+        resp.send("Book not found");
+    }
+});
+
 server.post(BOOKS_URL, (req, resp) => {
     console.log("Testing")
+    resp.end();
 });
 
 server.put(BOOKS_URL, (req, resp) => {
     console.log("Testing")
+    resp.end();
 });
 
 server.delete(BOOKS_URL, (req, resp) => {
     console.log("Testing")
+    resp.end();
 });
